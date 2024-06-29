@@ -1,0 +1,55 @@
+<div>
+    <h1 style="text-align: center;">Udemy Certifications</h1>
+
+    <div class="row mb-5" style="overflow-x: hidden; white-space: nowrap;" id="udemy-certifications-container">
+        <div>
+            <a href="https://www.udemy.com/certificate/UC-34f8f10c-f6b2-40a7-adc8-811f22f1c688/"><img src="{{ url_for('static', filename='images/certificates/html_and_css.jpg') }}" class="img-fluid certificate" ></a>
+            <a href="https://www.udemy.com/certificate/UC-0567325a-2cc9-492e-adac-1119dfaebdb7/"><img src="{{ url_for('static', filename='images/certificates/fundamentals_of_backend.jpg') }}" class="img-fluid certificate" ></a>
+            <a href="https://www.udemy.com/certificate/UC-198cb049-8f83-4e9b-9062-8f5d70ef5f8a/"><img src="{{ url_for('static', filename='images/certificates/fundamentals_of_database.jpg') }}" class="img-fluid certificate" ></a>
+            <a href="https://www.udemy.com/certificate/UC-fff58b86-8ece-4f24-9a10-5683c9552890/"><img src="{{ url_for('static', filename='images/certificates/docker_and_kubernetes.jpg') }}" class="img-fluid certificate" ></a>
+            <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-316e9a9b-1811-4483-9696-af6144a08a32.pdf"><img src="{{ url_for('static', filename='images/certificates/django.jpg') }}" class="img-fluid certificate" ></a>
+            <a href="https://www.udemy.com/certificate/UC-d505192a-61dc-4cb0-adf3-6f6347b3400d/"><img src="{{ url_for('static', filename='images/certificates/redis.jpg') }}" class="img-fluid certificate" ></a>
+            <a href="https://www.udemy.com/certificate/UC-aedcd303-6a49-453b-a04c-fda2251f08b3/"><img src="{{ url_for('static', filename='images/certificates/cassandra.jpg') }}" class="img-fluid certificate" ></a>
+
+
+        </div>        
+    </div>
+        
+</div>
+
+
+<script>
+    // Function to continuously scroll horizontally
+    function autoScroll() {
+        var container = document.getElementById('udemy-certifications-container');
+        var scrollAmount = 1; // Adjust scrolling speed as needed
+        var scrollWidth = container.scrollWidth;
+        var clientWidth = container.clientWidth;
+
+        if (container.scrollLeft >= (scrollWidth - clientWidth)) {
+            container.scrollLeft = 0; // Reset to start if reached end
+        } else {
+            container.scrollLeft += scrollAmount; // Scroll right
+        }
+    }
+
+    // Call autoScroll function every 50 milliseconds
+    setInterval(autoScroll, 10); // Adjust interval for smoother or faster scrolling
+</script>
+
+<style>
+    .certificate {
+        width: 500px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px; /* Adjust margin between badges */
+        border-radius: 20px; /* Add rounded corners */
+        border: 2px solid rgb(147, 6, 103); /* Border style */
+        display: inline-block; /* Ensure badges wrap properly */
+        transition: transform 0.2s ease-in-out; /* Optional: Add transition effect */
+    }
+    
+    .certificate:hover {
+        transform: scale(1.05); /* Optional: Scale up on hover */
+    }
+</style>
+

@@ -5,8 +5,8 @@ body {
 }
 
 .custom-container {
-    background-color: #7d7f815f; /* Light gray background */
-    margin: 20px; /* 10px margin on all sides */
+    background-color: #ffffff; /* Light gray background */
+    margin: 50px; /* 10px margin on all sides */
     padding: 20px; /* Add some padding inside the container */
     border-radius: 10px; /* Optional: rounded corners */
 }
@@ -21,6 +21,6 @@ p, li {
 }
 
 .rounded-image {
-    border: 2px solid #f6f0f0;
+    border: 5px solid #989797;
     border-radius: 100px;
 }

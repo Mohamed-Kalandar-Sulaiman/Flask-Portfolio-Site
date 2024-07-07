@@ -1,72 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Certifications</title>
+    <link rel="stylesheet" href="path/to/common.css">
+    <style>
+        .cert-container {
+            margin: 10px;
+            border-radius: 20px;
+            border: 2px solid rgb(147, 6, 103);
+            transition: transform 0.2s ease-in-out;
+            display: inline-block;
+        }
+
+        .cert-container:hover {
+            transform: scale(0.90);
+        }
+
+        .certificates-wrapper {
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            width: 100%;
+            position: relative;
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scroll-button.left {
+            left: 10px;
+        }
+
+        .scroll-button.right {
+            right: 10px;
+        }
+
+        .scroll-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
     <div>
         <h1 style="text-align: center;">AWS Certifications and Badges</h1>
-        <div class="row mb-5" style="overflow-x: hidden; white-space: nowrap;" id="aws-certifications-container">
-            <!-- AWS Knowledge: Cloud Essentials Badge -->
-            <div class="cert-container" style="background-color: #f0f0f0; width: 50vw; min-width: 300px; padding-right: 20px; display: inline-block;">
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="flex: 3;">
-                        <h1 class="display-4" style="color: navy;">AWS Knowledge: Cloud Essentials Badge</h1>
-                        <p class="lead">
-                            <li>Learned about basics of AWS RTO  RPO</li>
-                            <li>Basics of Compute, Networking, Storage</li>
-                            <li>Learned about Disaster Recovery</li>
+        <div class="row mb-5" style="overflow-x: hidden; position: relative;margin: 10px;padding: 10px;" id="aws-certifications-container">
+            <button class="scroll-button left" onclick="scrollLeftAWS()">&#9664;</button>
+            <div class="certificates-wrapper" id="aws-certificates-wrapper">
+                <!-- AWS Knowledge: Cloud Essentials Badge -->
+                <div class="cert-container" style="background-color: #f0f0f0; width: 50vw; min-width: 300px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 3;">
+                            <h1 class="display-4" style="color: navy;">AWS Knowledge: Cloud Essentials Badge</h1>
+                            <p class="lead">
+                                <li>Learned about basics of AWS RTO  RPO</li>
+                                <li>Basics of Compute, Networking, Storage</li>
+                                <li>Learned about Disaster Recovery</li>
+                            </p>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <a href="https://www.credly.com/badges/af2837e6-e61b-487b-b0a4-00f0ab3524e3/public_url" target="_blank">
+                                <img src="{{ url_for('static', filename='images/aws/aws-kca.png') }}" class="img-fluid" alt="AWS KCA" width="200">
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                        </p>
-                    </div>
-                    <div style="flex: 1; text-align: center;">
-                        <a href="https://www.credly.com/badges/af2837e6-e61b-487b-b0a4-00f0ab3524e3/public_url" target="_blank">
-                            <img src="{{ url_for('static', filename='images/aws/aws-kca.png') }}" class="img-fluid" alt="AWS KCA" width="200">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- AWS Certified Solutions Architect – Associate -->
-            <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 300px; padding-left: 20px; display: inline-block;">
-                <div style="display: flex; justify-content: space-between;">
-                    <div style="flex: 3;">
-                        <h1 class="display-4" style="color: navy;">AWS Certified Solutions Architect – Associate</h1>
-                        <p class="lead">
-                            <li>Offical AWS Certification</li>
-                            <li>VPC, EC2, Security</li>
-                            <li>SQS, SNS, Eventbridge</li>
-                        </p>
-                    </div>
-                    <div style="flex: 1; text-align: center;">
-                        <a href="https://www.credly.com/badges/584d1905-4e3d-491a-8a8c-19511ff33dd7/public_url" target="_blank">
-                            <img src="{{ url_for('static', filename='images/aws/aws-saa.png') }}" class="img-fluid" alt="AWS SAA" width="200">
-                        </a>
+                <!-- AWS Certified Solutions Architect – Associate -->
+                <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 300px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 3;">
+                            <h1 class="display-4" style="color: navy;">AWS Certified Solutions Architect – Associate</h1>
+                            <p class="lead">
+                                <li>Offical AWS Certification</li>
+                                <li>VPC, EC2, Security</li>
+                                <li>SQS, SNS, Eventbridge</li>
+                            </p>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <a href="https://www.credly.com/badges/584d1905-4e3d-491a-8a8c-19511ff33dd7/public_url" target="_blank">
+                                <img src="{{ url_for('static', filename='images/aws/aws-saa.png') }}" class="img-fluid" alt="AWS SAA" width="200">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button class="scroll-button right" onclick="scrollRightAWS()">&#9654;</button>
         </div>
     </div>
-    
-    
 
-
-<script>
-    // Function to continuously scroll horizontally
-    function autoScroll() {
-        var container = document.getElementById('aws-certifications-container');
-        var scrollAmount = 1; // Adjust scrolling speed as needed
-        var scrollWidth = container.scrollWidth;
-        var clientWidth = container.clientWidth;
-
-        if (container.scrollLeft >= (scrollWidth - clientWidth)) {
-            container.scrollLeft = 0; // Reset to start if reached end
-        } else {
-            container.scrollLeft += scrollAmount; // Scroll right
+    <script>
+        function scrollLeftAWS() {
+            var container = document.getElementById('aws-certificates-wrapper');
+            container.scrollBy({ left: -300, behavior: 'smooth' }); // Adjust scroll distance as needed
         }
-    }
 
-    // Call autoScroll function every 50 milliseconds
-    setInterval(autoScroll, 50); // Adjust interval for smoother or faster scrolling
-</script>
-
-
-<style>
-    .img:hover {
-        transform: scale(1.05); /* Optional: Scale up on hover */
-    }
-</style>
+        function scrollRightAWS() {
+            var container = document.getElementById('aws-certificates-wrapper');
+            container.scrollBy({ left: 300, behavior: 'smooth' }); // Adjust scroll distance as needed
+        }
+    </script>
+</body>
+</html>

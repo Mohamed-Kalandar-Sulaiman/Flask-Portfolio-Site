@@ -1,8 +1,9 @@
 <div>
     <h1 style="text-align: center;">Udemy Certifications</h1>
 
-    <div class="row mb-5" style="overflow-x: hidden; white-space: nowrap;" id="udemy-certifications-container">
-        <div>
+    <div class="row mb-5" style="overflow-x: hidden; position: relative;" id="udemy-certifications-container">
+        <button class="scroll-button left" onclick="UdemyscrollLeft()">&#9664;</button>
+        <div class="certificates-wrapper"id="udemy-certificates-wrapper">
             <a href="https://www.udemy.com/certificate/UC-34f8f10c-f6b2-40a7-adc8-811f22f1c688/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/html_and_css.jpg') }}" class="img-fluid certificate" ></a>
             <a href="https://www.udemy.com/certificate/UC-0567325a-2cc9-492e-adac-1119dfaebdb7/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/fundamentals_of_backend.jpg') }}" class="img-fluid certificate" ></a>
             <a href="https://www.udemy.com/certificate/UC-198cb049-8f83-4e9b-9062-8f5d70ef5f8a/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/fundamentals_of_database.jpg') }}" class="img-fluid certificate" ></a>
@@ -10,32 +11,11 @@
             <a href="https://www.udemy.com/certificate/UC-316e9a9b-1811-4483-9696-af6144a08a32/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/django.jpg') }}" class="img-fluid certificate" ></a>
             <a href="https://www.udemy.com/certificate/UC-d505192a-61dc-4cb0-adf3-6f6347b3400d/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/redis.jpg') }}" class="img-fluid certificate" ></a>
             <a href="https://www.udemy.com/certificate/UC-aedcd303-6a49-453b-a04c-fda2251f08b3/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/cassandra.jpg') }}" class="img-fluid certificate" ></a>
-
-
-        </div>        
+            <a href="https://www.udemy.com/certificate/UC-ea137959-2a72-4a5d-ba77-96799cda8e06/" target="_blank"><img src="{{ url_for('static', filename='images/certificates/fastapi.jpg') }}" class="img-fluid certificate" ></a>
+        </div>
+        <button class="scroll-button right" onclick="UdemyscrollRight()">&#9654;</button>
     </div>
-        
 </div>
-
-
-<script>
-    // Function to continuously scroll horizontally
-    function autoScroll() {
-        var container = document.getElementById('udemy-certifications-container');
-        var scrollAmount = 1; // Adjust scrolling speed as needed
-        var scrollWidth = container.scrollWidth;
-        var clientWidth = container.clientWidth;
-
-        if (container.scrollLeft >= (scrollWidth - clientWidth)) {
-            container.scrollLeft = 0; // Reset to start if reached end
-        } else {
-            container.scrollLeft += scrollAmount; // Scroll right
-        }
-    }
-
-    // Call autoScroll function every 50 milliseconds
-    setInterval(autoScroll, 10); // Adjust interval for smoother or faster scrolling
-</script>
 
 <style>
     .certificate {
@@ -51,5 +31,57 @@
     .certificate:hover {
         transform: scale(1.05); /* Optional: Scale up on hover */
     }
+    
+    .certificates-wrapper {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        width: 100%;
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .scroll-button.left {
+        left: 10px;
+    }
+    
+    .scroll-button.right {
+        right: 10px;
+    }
+    
+    .scroll-button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
 </style>
+
+
+
+<script>
+    function UdemyscrollLeft() {
+        var container = document.getElementById('udemy-certificates-wrapper');
+        container.scrollBy({ right: -500, behavior: 'smooth' }); // Adjust scroll distance as needed
+    }
+
+    function UdemyscrollRight() {
+        var container = document.getElementById('udemy-certificates-wrapper');
+        container.scrollBy({ left: 500, behavior: 'smooth' }); // Adjust scroll distance as needed
+    }
+</script>
+
 

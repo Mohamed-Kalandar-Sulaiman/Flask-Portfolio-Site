@@ -1,10 +1,51 @@
 <div class="row mb-5">
     <div class="col-md-6 text-center d-flex flex-column align-items-center justify-content-center">
-        <a href="https://www.linkedin.com/in/mohamed-kalandar-sulaiman/" target="_blank"><img src="{{ url_for('static', filename='images/icons/linkedin.png') }}" class="img-fluid " alt="LinkedIn" width="50"></a>
-        <a href="https://mypersonalblog-mks.blogspot.com/" target="_blank"><img src="{{ url_for('static', filename='images/icons/blogspot.png') }}" class="img-fluid " alt="Blogspot" width="50"></a>
-        <a href="https://leetcode.com/u/Mohamed_Sulaiman/" target="_blank"><img src="{{ url_for('static', filename='images/icons/leetcode.png') }}" class="img-fluid rounded-circle mb-3" alt="LeetCode" width="50"></a>
+        <a href="https://www.linkedin.com/in/mohamed-kalandar-sulaiman/" target="_blank" class="icon-link">
+            <img src="{{ url_for('static', filename='images/icons/linkedin.png') }}" class="img-fluid" alt="LinkedIn" width="50">
+            <span class="icon-text">LinkedIn</span>
+        </a>
+        <a href="https://mypersonalblog-mks.blogspot.com/" target="_blank" class="icon-link">
+            <img src="{{ url_for('static', filename='images/icons/blogspot.png') }}" class="img-fluid" alt="Blogspot" width="50">
+            <span class="icon-text">Blogspot</span>
+        </a>
+        <a href="https://leetcode.com/u/Mohamed_Sulaiman/" target="_blank" class="icon-link">
+            <img src="{{ url_for('static', filename='images/icons/leetcode.png') }}" class="img-fluid rounded-circle mb-3" alt="LeetCode" width="50">
+            <span class="icon-text">LeetCode</span>
+        </a>
 
-
-        
+        <a href="{{ url_for('static', filename='resume/Resume.pdf') }}" target="_blank" class="icon-link">
+            <img src="{{ url_for('static', filename='images/icons/cv.png') }}" class="img-fluid rounded-circle mb-3" alt="Download Resume" width="50">
+            <span class="icon-text">Download Resume</span>
+        </a>
     </div>
 </div>
+
+
+
+<style>
+    .icon-link {
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+        text-decoration: none;
+    }
+
+    .icon-text {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none; /* Ensure text doesn't interfere with link clicks */
+    }
+
+    .icon-link:hover .icon-text {
+        opacity: 1;
+    }
+</style>

@@ -59,17 +59,17 @@
 </head>
 <body>
     <div>
-        <h1 style="text-align: center;">AWS Certifications and Badges</h1>
+        <h1 style="text-align: center;">AWS & O'reilly - Certifications and Badges</h1>
         <div class="row mb-5" style="overflow-x: hidden; position: relative;margin: 10px;padding: 10px;" id="aws-certifications-container">
             <button class="scroll-button left" onclick="scrollLeftAWS()">&#9664;</button>
             <div class="certificates-wrapper" id="aws-certificates-wrapper">
                 <!-- AWS Knowledge: Cloud Essentials Badge -->
-                <div class="cert-container" style="background-color: #f0f0f0; width: 50vw; min-width: 300px; padding: 20px;">
+                <div class="cert-container" style="background-color: #f0f0f0; width: 50vw; min-width: 450px; padding: 20px;">
                     <div style="display: flex; justify-content: space-between;">
                         <div style="flex: 3;">
                             <h1 class="display-4" style="color: navy;">AWS Knowledge: Cloud Essentials Badge</h1>
                             <p class="lead">
-                                <li>Learned about basics of AWS RTO  RPO</li>
+                                <li>Basics of AWS </li>
                                 <li>Basics of Compute, Networking, Storage</li>
                                 <li>Learned about Disaster Recovery</li>
                             </p>
@@ -83,7 +83,7 @@
                 </div>
 
                 <!-- AWS Certified Solutions Architect – Associate -->
-                <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 300px; padding: 20px;">
+                <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 450px; padding: 20px;">
                     <div style="display: flex; justify-content: space-between;">
                         <div style="flex: 3;">
                             <h1 class="display-4" style="color: navy;">AWS Certified Solutions Architect – Associate</h1>
@@ -100,6 +100,68 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                <!-- Oreilly - RESTful API with Golang -->
+                <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 450px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 3;">
+                            <h1 class="display-4" style="color: navy;">RESTful API's with Go</h1>
+                            <p class="lead">
+                                <li>Basics of Golang</li>
+                                <li>REST API using go net/http</li>
+                            </p>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <a href="https://www.credly.com/badges/c53ce27e-0c3f-48ab-890a-6c1b0577f684/public_url" target="_blank">
+                                <img src="{{ url_for('static', filename='images/aws/restful-apis-with-go.png') }}" class="img-fluid" alt="AWS SAA" width="200">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oreilly - Concurrency with  Golang -->
+                <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 450px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 3;">
+                            <h1 class="display-4" style="color: navy;">Concurrency in Go</h1>
+                            <p class="lead">
+                                <li>Basics of concurrent programming in  Golang</li>
+                                <li>Wait groups , channels, mutex, locks</li>
+                            </p>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <a href="https://www.credly.com/badges/c04a5352-5757-47d0-aeba-dba7bda44150/public_url" target="_blank">
+                                <img src="{{ url_for('static', filename='images/aws/concurrency-in-go.png') }}" class="img-fluid" alt="AWS SAA" width="200">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oreilly - CKA -->
+                <div class="cert-container" style="background-color: #e9f5fb; width: 50vw; min-width: 450px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 3;">
+                            <h1 class="display-4" style="color: navy;">Certified Kubernetes Associate Video Course</h1>
+                            <p class="lead">
+                                <li>Basic of Kubernetes</li>
+                                <li>Creation , management , debugging of cluster</li>
+                            </p>
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <a href="https://www.credly.com/earner/earned/badge/bc9c2e55-281e-441e-a9d9-f3de67e97ce4/public_url" target="_blank">
+                                <img src="{{ url_for('static', filename='images/aws/cka-complete-video-course.png') }}" class="img-fluid" alt="AWS SAA" width="200">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
             </div>
             <button class="scroll-button right" onclick="scrollRightAWS()">&#9654;</button>
         </div>

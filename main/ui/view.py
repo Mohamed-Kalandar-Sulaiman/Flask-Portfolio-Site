@@ -1,25 +1,23 @@
-from flask import Blueprint, render_template
-from flask import request
+from flask import Blueprint, render_template, request
 from datetime import datetime 
 import os
 
-
-ui_blueprint = Blueprint( "ui",
-                          __name__,
-                          template_folder="templates", 
-                          static_folder="static", 
-                          static_url_path="/ui"
-                          )
-
+ui_blueprint = Blueprint(
+    "ui",
+    __name__,
+    template_folder="templates", 
+    static_folder="static", 
+    static_url_path="/ui"
+)
 
 log_file_path = "visitor_logs.txt"
 
 @ui_blueprint.route("/", methods=['GET'])
 def home():
     queryParams = request.args
-    whoIsIt = queryParams.get("me", None)
+    origin = queryParams.get("origin", "unknown")
     
-    if whoIsIt is None:
+    if origin != "me":
         # Collect detailed information about the visitor
         client_ip = request.remote_addr
         user_agent = request.headers.get('User-Agent')
@@ -34,7 +32,8 @@ def home():
             f"User-Agent: {user_agent}, "
             f"Referrer: {referrer}, "
             f"URL: {full_url}, "
-            f"Method: {http_method}\n"
+            f"Method: {http_method}, "
+            f"Origin: {origin}\n"
         )
         
         # Write log data to the log file
